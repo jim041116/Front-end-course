@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花花賣花</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- 頁首區 -->
+    <header id="topbar">
+        <h1 class="logo">
+            <a href="index.html">
+                <img src="images/logo_b.svg" alt="logo">
+            </a>
+        </h1>
+        <nav>
+            <ul class="icon">
+                <li><a href="https://www.ntub.edu.tw/" class="icon_fb" target="_blank"></a></li>
+                <li><a href="https://www.ntub.edu.tw/" class="icon_ig" target="_blank"></a></li>
+                <li><a href="https://www.ntub.edu.tw/" class="icon_line" target="_blank"></a></li>
+            </ul>
+            <ul class="menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">SERVICE</a></li>
+                <li><a href="#">VIDEO</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 主要內容區 -->
+    <main>
+        <!-- BN區 -->
+        <div id="banner"></div>
+        <!-- news區 -->
+        <section id="news">
+            <h2 class="title">news</h2>
+        </section>
+        <!-- service區 -->
+        <section id="service">
+            <h2 class="title">service</h2>
+        </section>
+        <!-- video區 -->
+        <section id="video">
+            <h2 class="title">video</h2>
+        </section>
+        <!-- about區 -->
+        <section id="about">
+            <h2 class="title">bout</h2>
+        </section>
+        <!-- contact區 -->
+        <section id="contact">
+            <h2 class="title">contact</h2>
+            <form name="message_form" id="message_form" action="" method="post">
+                <label for="user_name">*Name：</label>
+                <input type="text" name="user_name" id="user_name" placeholder="your name" required>
+                <label for="tel">Tel：</label>
+                <input type="tel" name="tel" id="tel" placeholder="your phone">
+                <label for="email">*Email：</label>
+                <input type="email" name="email" id="email" placeholder="your email" required>
+                <label for="msg">message：</label>
+                <textarea name="msg" id="msg" cols="30" rows="5"></textarea>
+                <small>表單僅供示意，無蒐集個資疑慮</small>
+            </form>
+        </section>
+    </main>
+    <!-- 頁尾區 -->
+    <footer>copyright © 花花賣花 版權所有</footer>
+</body>
+
+</html>
