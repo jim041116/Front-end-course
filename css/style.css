@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+video {
+  display: block;
+}
+
+#topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#topbar .logo {
+  width: 80px;
+  margin-left: 1rem;
+}
+#topbar nav .icon {
+  display: flex;
+  justify-content: end;
+  margin-right: 1rem;
+}
+#topbar nav .icon a {
+  width: 35px;
+  height: 35px;
+  display: block;
+  margin-right: 0.5rem;
+}
+#topbar nav .icon_fb {
+  background-image: url(../images/icon-fb.svg);
+  transition: 0.5s;
+}
+#topbar nav .icon_fb:hover {
+  background-image: url(../images/icon-fb-hover.svg);
+}
+#topbar nav .icon_ig {
+  background-image: url(../images/icon-ig.svg);
+  transition: 0.5s;
+}
+#topbar nav .icon_ig:hover {
+  background-image: url(../images/icon-ig-hover.svg);
+}
+#topbar nav .icon_line {
+  background-image: url(../images/icon-line.svg);
+  transition: 0.5s;
+}
+#topbar nav .icon_line:hover {
+  background-image: url(../images/icon-line-hover.svg);
+}
+#topbar nav .menu {
+  display: flex;
+  border: 2px solid rgba(255, 255, 255, 0.438);
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.3), 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  margin: 0.5rem 1rem;
+  padding: 0.5rem;
+}
+#topbar nav .menu li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: rgb(56, 56, 56);
+  border: none;
+  position: relative;
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+}
+#topbar nav .menu li a:hover::after {
+  width: 100%;
+}
+#topbar nav .menu li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: -1px;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(56, 56, 56);
+  transition: width 0.4s ease-in-out;
+}
+
+main > * {
+  height: 100vh;
+}
+
+main section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main section .title {
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+  font-size: 3rem;
+  border-top: 3px solid rgb(56, 56, 56);
+  color: rgb(56, 56, 56);
+  margin: 50px 0;
+}
+main #contact {
+  background-image: url(../images/bg_contact.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+main #contact #message_form {
+  width: 35%;
+}
+main #contact #message_form label {
+  margin: 30px 0 10px;
+}
+main #contact #message_form input,
+main #contact #message_form textarea {
+  padding: 10px 15px;
+  color: rgb(56, 56, 56);
+  border: 2px solid rgba(255, 255, 255, 0.438);
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.3), 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+main #contact #message_form button {
+  position: relative;
+  outline: none;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+  height: 40px;
+  width: 210px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.438);
+  backdrop-filter: blur(5px);
+}
+main #contact #message_form button:hover {
+  animation: rotate 0.7s ease-in-out both;
+}
+main #contact #message_form button:hover span {
+  animation: storm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+main #contact #message_form button span {
+  color: rgb(56, 56, 56);
+  font-size: 12px;
+  font-weight: 500px;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: rotate(3deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-3deg) translate3d(0, 0, 0);
+  }
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+@keyframes storm {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
+main #contact #message_form > * {
+  display: block;
+  width: 100%;
+  border-radius: 15px;
+}
+main #news {
+  background-color: #f2edf0;
+}
+main #news .list_box {
+  display: flex;
+  width: 80%;
+}
+main #news .list_box .list_item {
+  flex: 1;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.479);
+  margin: 0 1rem;
+  overflow: hidden;
+}
+main #news .list_box .list_item div {
+  height: 40vh;
+  overflow: hidden;
+}
+main #news .list_box .list_item img {
+  object-fit: cover;
+  height: 100%;
+}
+main #news .list_box .list_item .news_text {
+  padding: 20px;
+  height: auto;
+}
+main #news .list_box .list_item .news_text p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+main #news .list_box .list_item .news_text a {
+  display: block;
+  text-align: end;
+  color: rgb(56, 56, 56);
+}
+main #news .list_box .list_item .news_text a:hover {
+  text-decoration: underline;
+}
+main #service {
+  background-color: #e6ece5;
+}
+main #video {
+  background-color: #ecf0f4;
+}
+
+footer {
+  background-color: #f2edf0;
+  padding: 50px;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
