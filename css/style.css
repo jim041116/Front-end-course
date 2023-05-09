@@ -43,6 +43,7 @@ video {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 99;
 }
 #topbar .logo {
   width: 80px;
@@ -61,21 +62,21 @@ video {
 }
 #topbar nav .icon_fb {
   background-image: url(../images/icon-fb.svg);
-  transition: 0.5s;
+  transition: all 0.5s;
 }
 #topbar nav .icon_fb:hover {
   background-image: url(../images/icon-fb-hover.svg);
 }
 #topbar nav .icon_ig {
   background-image: url(../images/icon-ig.svg);
-  transition: 0.5s;
+  transition: all 0.5s;
 }
 #topbar nav .icon_ig:hover {
   background-image: url(../images/icon-ig-hover.svg);
 }
 #topbar nav .icon_line {
   background-image: url(../images/icon-line.svg);
-  transition: 0.5s;
+  transition: all 0.5s;
 }
 #topbar nav .icon_line:hover {
   background-image: url(../images/icon-line-hover.svg);
@@ -128,7 +129,7 @@ main section .title {
   font-family: "Caveat", cursive;
   font-weight: 700;
   font-size: 3rem;
-  border-top: 3px solid rgb(56, 56, 56);
+  border-bottom: 3px solid rgb(56, 56, 56);
   color: rgb(56, 56, 56);
   margin: 50px 0;
 }
@@ -255,15 +256,94 @@ main #news .list_box .list_item .news_text a {
   display: block;
   text-align: end;
   color: rgb(56, 56, 56);
+  transition: all 0.5s;
+  margin-right: 2rem;
 }
 main #news .list_box .list_item .news_text a:hover {
   text-decoration: underline;
+  transform: scale(1.2);
 }
 main #service {
   background-color: #e6ece5;
 }
+main #service .list_box {
+  display: flex;
+  width: 80%;
+  height: 60vh;
+}
+main #service .list_box .service_bg_1 {
+  background-image: url(../images/pt_svc1.jpg);
+}
+main #service .list_box .service_bg_2 {
+  background-image: url(../images/pt_svc2.jpg);
+}
+main #service .list_box .service_bg_3 {
+  background-image: url(../images/pt_svc3.jpg);
+}
+main #service .list_box .service_bg_4 {
+  background-image: url(../images/pt_svc4.jpg);
+}
+main #service .list_box .list_item {
+  flex: 1;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.479);
+  margin: 0 1rem;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s;
+}
+main #service .list_box .list_item:hover {
+  transform: scale(1.05);
+}
+main #service .list_box .list_item a {
+  display: block;
+  width: 100%;
+  color: rgb(56, 56, 56);
+  padding: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.438);
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.3), 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border: 0px;
+}
+main #service .list_box .list_item a p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 main #video {
   background-color: #ecf0f4;
+}
+main #video video {
+  height: 70vh;
+}
+main #about {
+  position: relative;
+}
+main #about video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+main #about div {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid rgba(255, 255, 255, 0.438);
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.3), 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+main #about div p {
+  height: 70vh;
+  overflow: auto;
+  padding: 0 5rem;
 }
 
 footer {

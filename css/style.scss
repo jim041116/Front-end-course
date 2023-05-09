@@ -41,15 +41,29 @@ video {
 //     font-family: apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "蘋方-繁", "PingFang TC", “黑體-繁", " Heiti TC", “微軟正黑體", "Microsoft JhengHei", sans-serif;
 // }
 
-$icon-anim: .5s;
+$icon-anim: all .5s;
 $text_color: rgb(56, 56, 56);
-$form_bg:rgba(255, 255, 255, 0.2);
+$text_color_2: white;
+$form_bg: rgba(255, 255, 255, 0.2);
 
 @mixin glass_bg() {
     border: 2px solid rgba(255, 255, 255, 0.438);
     backdrop-filter: blur(5px);
     background-color: $form_bg;
     box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.3), 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+@mixin list_box_style() {
+    display: flex;
+    width: 80%;
+}
+
+@mixin list_item_style() {
+    flex: 1;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.479);
+    margin: 0 1rem;
+    overflow: hidden;
 }
 
 // header start
@@ -61,6 +75,7 @@ $form_bg:rgba(255, 255, 255, 0.2);
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 99;
 
     .logo {
         width: 80px;
@@ -166,7 +181,7 @@ main {
                 size: 3rem;
             }
 
-            border-top: 3px solid $text_color;
+            border-bottom: 3px solid $text_color;
             color: $text_color;
             margin: 50px 0;
         }
@@ -279,15 +294,10 @@ main {
         background-color: #f2edf0;
 
         .list_box {
-            display: flex;
-            width: 80%;
+            @include list_box_style();
 
             .list_item {
-                flex: 1;
-                border-radius: 15px 15px 0 0;
-                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.479);
-                margin: 0 1rem;
-                overflow: hidden;
+                @include list_item_style();
 
                 div {
                     height: 40vh;
@@ -316,9 +326,12 @@ main {
                         display: block;
                         text-align: end;
                         color: $text_color;
+                        transition: $icon-anim;
+                        margin-right: 2rem;
 
                         &:hover {
                             text-decoration: underline;
+                            transform: scale(1.2);
                         }
                     }
                 }
@@ -328,10 +341,89 @@ main {
 
     #service {
         background-color: #e6ece5;
+
+        .list_box {
+            @include list_box_style();
+            height: 60vh;
+
+            .service_bg_1 {
+                background-image: url(../images/pt_svc1.jpg)
+            }
+
+            .service_bg_2 {
+                background-image: url(../images/pt_svc2.jpg)
+            }
+
+            .service_bg_3 {
+                background-image: url(../images/pt_svc3.jpg)
+            }
+
+            .service_bg_4 {
+                background-image: url(../images/pt_svc4.jpg)
+            }
+
+            .list_item {
+                @include list_item_style();
+                display: flex;
+                align-items: flex-end;
+                background-size: cover;
+                background-position: center;
+                transition: $icon-anim;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+
+                a {
+                    display: block;
+                    width: 100%;
+                    color: $text_color;
+                    padding: 1rem;
+                    @include glass_bg();
+                    border: 0px;
+
+                    p {
+                        // 單行省略寫法
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
     }
 
     #video {
         background-color: #ecf0f4;
+
+        video {
+            height: 70vh;
+        }
+    }
+
+    #about {
+        position: relative;
+        video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: .3;
+        }
+
+        div {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include glass_bg();
+
+            p {
+                height: 70vh;
+                overflow: auto;
+                padding: 0 5rem;
+            }
+        }
     }
 }
 
